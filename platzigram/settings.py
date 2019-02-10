@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('PLATZIGRAM_SECRET_KEY')
+SECRET_KEY = '$6vsu%*l5w74vesra!c$@x%%1+g9)^sq(@mb$3lk$+k*lejcjz'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -83,11 +83,11 @@ WSGI_APPLICATION = 'platzigram.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.getenv('PLATZIGRAM_DB_NAME'),
-        'USER': os.getenv('PLATZIGRAM_DB_USER'),
-        'PASSWORD': os.getenv('PLATZIGRAM_DB_PASSWORD'),
-        'HOST': os.getenv('PLATZIGRAM_DB_HOST'),
-        'PORT': os.getenv('PLATZIGRAM_DB_PORT'),
+        'NAME': 'platzigramdb',
+        'USER': 'platzigramdb',
+        'PASSWORD': 'platzigramdb2019',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
