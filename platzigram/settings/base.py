@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '$6vsu%*l5w74vesra!c$@x%%1+g9)^sq(@mb$3lk$+k*lejcjz'
+SECRET_KEY = os.getenv('PLATZIGRAM_SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -82,12 +82,12 @@ WSGI_APPLICATION = 'platzigram.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'platzigramdb',
-        'USER': 'platzigramdb',
-        'PASSWORD': 'platzigramdb2019',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': os.getenv('PLATZIGRAM_DB_NAME'),
+        'USER': os.getenv('PLATZIGRAM_DB_USER'),
+        'PASSWORD': os.getenv('PLATZIGRAM_DB_PASSWORD'),
+        'HOST': os.getenv('PLATZIGRAM_DB_HOST'),
+        'PORT': os.getenv('PLATZIGRAM_DB_PORT'),
     }
 }
 
@@ -114,15 +114,15 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-MX'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Guayaquil'
 
 USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = False
+USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
