@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '$6vsu%*l5w74vesra!c$@x%%1+g9)^sq(@mb$3lk$+k*lejcjz'
+SECRET_KEY = ''
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -82,8 +82,8 @@ WSGI_APPLICATION = 'platzigram.wsgi.application'
 
 DATABASES = {
     'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+            'ENGINE': 'django.db.backends.postgres_psycopg2',
+
     }
 }
 
@@ -138,8 +138,3 @@ MEDIA_URL = '/media/'
 LOGIN_URL = '/users/login/'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = LOGIN_URL
-
-try:
-    from .local_settings import *
-except ImportError:
-    pass
